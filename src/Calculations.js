@@ -4,8 +4,9 @@ const Calculations = ({ val, handleValue, clearBtn }) => {
   const signs = ["+", "-", "*", "/", "%"];
   const handleDigit = (digit) => {
     if (
-      signs.includes(val[val.length - 1]) &&
-      (digit === "0" || signs.includes(digit))
+      (signs.includes(val[val.length - 1]) &&
+        (digit === "0" || signs.includes(digit))) ||
+      (val[val.length - 1] === "." && digit === ".")
     ) {
       handleValue(val);
     } else if (val === "" && digit === "0") {
@@ -19,13 +20,15 @@ const Calculations = ({ val, handleValue, clearBtn }) => {
   const handleToggle = () => {
     if (val.includes("(")) {
       handleValue(val.concat(")"));
+    } else if (val === "") {
+      handleValue(val.concat("("));
     } else {
       handleValue(val.concat("*("));
     }
   };
   const handleTogglePlusMinus = () => {
     if (val[0] === "-") {
-      handleValue(val.concat("+"));
+      handleValue(val);
     } else {
       handleValue(val.concat("-"));
     }
