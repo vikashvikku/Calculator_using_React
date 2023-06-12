@@ -1,0 +1,56 @@
+.calc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-top: 2px solid rgb(236, 230, 230);
+  margin: 30px 0;
+  padding-top: 10px;
+}
+
+.output {
+  text-align: end;
+  font-size: 24px;
+  height: 48px;
+}
+
+.cont-1,
+.cont-2,
+.cont-3,
+.cont-4,
+.cont-5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item {
+  font-weight: 400;
+  font-size: 24px;
+  width: 62px;
+  height: 62px;
+  border-radius: 100%;
+  color: black;
+  background-color: rgba(226, 221, 221, 0.897);
+  border: none;
+}
+
+.clear {
+  color: red;
+}
+
+.cal {
+  color: green;
+}
+
+.item {
+  transition-duration: 0.4s;
+}
+
+.item:hover {
+  background-color: #bcbdbc; /* Green */
+}
+
+.equal {
+  background-color: rgb(31, 172, 31);
+  color: white;
+}
